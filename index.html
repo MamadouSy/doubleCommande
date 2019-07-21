@@ -4,6 +4,7 @@
 		<title>Double Commande</title>
 		<style>
 			:root {
+				--primary-color: rgb(84, 29, 130);
 				--dark-gray: #333;
 				--dark-gray-hover: #555;
 				--light-gray: #cdcdcd;
@@ -20,12 +21,44 @@
 				
 				font-size: 16px;
 			}
+
 			html, body {
 				width: 100%;
 				height: 100%;
 				margin: 0;
 				padding: 0;
 			}
+
+			#mobile-nav {
+				background-color: var(--primary-color);
+				padding: .625em;
+				height: 1.688em;
+				position: relative;
+			}
+
+			#mobile-nav .hamburger {
+				position: absolute;
+				right: .625em;
+			}
+
+			#mobile-nav .hamburger:hover {
+				background: var(--nav-bar-bg-hover);
+			}
+
+			#mobile-nav .hamburger span	{
+				display: block;
+				width: 2.500rem;
+				height: .250rem;
+				margin-bottom: .313rem;
+				border-radius: .188em;
+				background: var(--nav-burger-bg);
+			}
+
+			#mobile-nav .hamburger:hover span {
+				background: var(--nav-burger-bg-hover);
+			}
+/*
+
 			.top-nav {
 		  		background-color: var(--nav-bar-bg);
 		  		overflow: hidden;
@@ -35,8 +68,13 @@
 			
 			.menu-container {
 				flex: 1;
+				position: relative;
 			}
 			
+			.menu-container ul {
+			    position: absolute;
+		    }
+
 			.top-nav ul,
 			.tap-nav ul > li {
 				padding: 0;
@@ -48,9 +86,10 @@
 				display: inline-block;
 			}
 			
-			.top-nav ul > li a {
+			.top-nav a {
 				display: block;
 				margin: 0;
+				background-color: var(--nav-bar-bg);
 				color: var(--nav-bar-color);
 				text-decoration: none;
 				text-align: center;
@@ -69,15 +108,13 @@
 			}
 			
 			.top-nav .hamburger {
-				display: none; /* By default hide the hamburger icon*/
+				display: none; /* By default hide the hamburger icon*//*
+				padding-bottom: 0.5em;
 			}
 
 			.hamburger {
-				padding-top: .875em;
-				padding-right: .875em;
-				padding-left: .875em;
+
 			}
-			
 			.hamburger:hover {
 				background: var(--nav-bar-bg-hover);
 			}
@@ -93,28 +130,36 @@
 			
 			.hamburger:hover span {
 				background: var(--nav-burger-bg-hover);	
-			}
+			}*/
 			
 		</style>
 		<style>
-		@media screen and (max-width: 600px) {
+		/*@media screen and (max-width: 600px) {
 		  .top-nav ul > li {
 			display: block;
 		  }
 		  .top-nav ul > li a {
 			text-align: left;
 		  }
+		  
 		  .top-nav .menu-container a:not(.active) {
-			/* display: none; */
+			/* display: none; *//*
 		   }
+
 		  .top-nav .hamburger {
 		    display: block;
 		  }
-		}
+		}*/
 		</style>
 	</head>
 	<body>
-		
+		<nav id="mobile-nav" role="navigation">
+			<a class="hamburger" href="#">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+		</nav>
 		<nav class="top-nav" role="navigation">
 		 	<div class="menu-container">
 				<ul>
