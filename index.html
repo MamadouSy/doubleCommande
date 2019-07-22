@@ -1,25 +1,35 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Double Commande</title>
+		<title>My Permis Facile</title>
+		<meta charset="utf-8"/>
 		<style>
 			:root {
-				--primary-color: rgb(84, 29, 130);
+				--main-bg: rgb(222, 222, 222);
+				--content-bg: rgb(255, 255, 255);
+				--primary: rgb(84, 29, 130);
+				--primary-light: rgb(111, 54, 157);
+				--primary-lighten: rgb(138, 79, 184);
+				--primary-dark: rgb(57, 0, 104);
+				--primary-darken: rgb(31, 0, 80);
+				--complementary: rgb(75, 130, 29);
+				--analogous-cold: rgb(0, 59, 155);
+				--analogous-warn: rgb(128, 0, 87);
 				--dark-gray: #333;
 				--dark-gray-hover: #555;
-				--light-gray: #cdcdcd;
-				--light-gray-hover: #ddd;
+				--light-gray: var(--main-bg);
+				--light-gray-hover: var(--content-bg);
 				
-				--nav-bar-bg: var(--dark-gray);
+				--nav-bar-bg: var(--primary);
 				--nav-bar-color: var(--light-gray);
-				--nav-bar-bg-hover: var(--dark-gray-hover);
+				--nav-bar-bg-hover: var(--nav-bar-bg);
 				--nav-bar-color-hover: var(--light-gray-hover);
-				--nav-bar-bg-active: #4CAF50;
-				--nav-bar-color-active: #fff;
-				--nav-burger-bg: var(--light-gray);
-				--nav-burger-bg-hover: var(--light-gray-hover);
-				
+
 				font-size: 16px;
+			}
+
+			html {
+				scroll-behavior: smooth;
 			}
 
 			html, body {
@@ -29,8 +39,22 @@
 				padding: 0;
 			}
 
+			body {
+				background-color: var(--main-bg);
+			}
+
+			#logo-container {
+				text-align: center;
+			}
+
+			#logo {
+				width: 40%;
+				margin: 2.812em;
+			}
+
 			#mobile-nav {
-				background-color: var(--primary-color);
+				display: none;
+				background-color: var(--nav-bar-bg);
 				padding: .625em;
 				height: 1.688em;
 				position: relative;
@@ -42,7 +66,7 @@
 			}
 
 			#mobile-nav .hamburger:hover {
-				background: var(--nav-bar-bg-hover);
+				background-color: var(--nav-bar-bg-hover);
 			}
 
 			#mobile-nav .hamburger span	{
@@ -51,108 +75,107 @@
 				height: .250rem;
 				margin-bottom: .313rem;
 				border-radius: .188em;
-				background: var(--nav-burger-bg);
+				background-color: var(--nav-bar-color);
 			}
 
 			#mobile-nav .hamburger:hover span {
-				background: var(--nav-burger-bg-hover);
+				background-color: var(--nav-bar-color-hover);
 			}
-/*
 
-			.top-nav {
-		  		background-color: var(--nav-bar-bg);
-		  		overflow: hidden;
-				display: flex;
-				flex-direction: row;
+			#menu {
+				background-color: var(--nav-bar-bg);
 			}
-			
-			.menu-container {
-				flex: 1;
-				position: relative;
-			}
-			
-			.menu-container ul {
-			    position: absolute;
-		    }
 
-			.top-nav ul,
-			.tap-nav ul > li {
+			#menu ul,
+			#menu ul > li {
 				padding: 0;
 				margin: 0;
 				list-style: none;
 			}
-			
-			.top-nav ul > li {
-				display: inline-block;
+
+			#menu ul {
+				display: flex;
+				flex-direction: row;
 			}
-			
-			.top-nav a {
-				display: block;
-				margin: 0;
-				background-color: var(--nav-bar-bg);
+
+			#menu li {
+				flex: 1;
+				text-align: center;
+			}
+
+			#menu a {
 				color: var(--nav-bar-color);
 				text-decoration: none;
-				text-align: center;
-				font-size: 1.063rem;
-				padding: .8753em 1em;
-			}
-			
-			.top-nav ul > li a:hover {
-				 background-color: var(--nav-bar-bg-hover);
-				 color: var(--nav-bar-color-hover);
-			}
-			
-			.top-nav ul > li a.active {
-			  background-color: var(--nav-bar-bg-active);
-			  color: var(--nav-bar-color-active);
-			}
-			
-			.top-nav .hamburger {
-				display: none; /* By default hide the hamburger icon*//*
-				padding-bottom: 0.5em;
+				font-size: 1.250rem;
+				display: inline-block;
+				padding: .625em 1em;
+				width: 100%;
+				border-bottom: .250em solid transparent;
 			}
 
-			.hamburger {
+			#menu a:hover {
+				color: var(--nav-bar-color-hover);
+				border-bottom-color: var(--primary-lighten);
+			}
 
+			#main-content {
+				width: 75%;
+				margin: 1.875em auto;
+				padding: .938em;
+				background-color: var(--content-bg);
 			}
-			.hamburger:hover {
-				background: var(--nav-bar-bg-hover);
+
+			h2 {
+				color: var(--complementary);
 			}
-			
-			.hamburger span	{
-			  display: block;
-			  width: 2.500rem;
-			  height: .250rem;
-			  margin-bottom: .313rem;
-			  border-radius: .188em;
-			  background: var(--nav-burger-bg);
+
+			h3 {
+				color: var(--analogous-warn);
+				text-transform: uppercase;
 			}
-			
-			.hamburger:hover span {
-				background: var(--nav-burger-bg-hover);	
-			}*/
-			
+
 		</style>
 		<style>
-		/*@media screen and (max-width: 600px) {
-		  .top-nav ul > li {
-			display: block;
-		  }
-		  .top-nav ul > li a {
-			text-align: left;
-		  }
-		  
-		  .top-nav .menu-container a:not(.active) {
-			/* display: none; *//*
-		   }
+		@media screen and (max-width: 600px) {
+			#logo {
+				width: 50%;
+			}
 
-		  .top-nav .hamburger {
-		    display: block;
-		  }
-		}*/
+			#mobile-nav {
+				display: block;
+			}
+
+			#menu {
+				display: none;
+			}
+
+			#menu.show {
+				display: block;
+			}
+
+			#menu ul {
+				display: block;
+			}
+
+			#menu li {
+				text-align: left;
+			}
+
+			#menu a {
+				border-bottom: none;
+			}
+
+			#main-content {
+				width: 85%;
+			}
+		}
 		</style>
 	</head>
 	<body>
+	    <div id="logo-container">
+			<img id="logo" alt="My permis facile - Logo" src="images/logo.png" />
+		</div>
+
 		<nav id="mobile-nav" role="navigation">
 			<a class="hamburger" href="#">
 				<span></span>
@@ -160,20 +183,117 @@
 				<span></span>
 			</a>
 		</nav>
-		<nav class="top-nav" role="navigation">
-		 	<div class="menu-container">
-				<ul>
-					<li><a href="#home" class="active">Home</a></li>
-					<li><a href="#news">News</a></li>
-					<li><a href="#contact">Contact</a></li>
-					<li><a href="#about">About</a></li>
-				</ul>
-		  	</div>
-			<a class="hamburger" href="#">
-				<span></span>
-				<span></span>
-				<span></span>
-			</a>
+		<nav id="menu" role="navigation">
+			<ul>
+				<li><a href="#what">Notre offre</a></li>
+				<li><a href="#rate">Nos tarifs</a></li>
+				<li><a href="#how">Comment s'inscrire?</a></li>
+				<li><a href="#who">Nous contacter</a></li>
+			</ul>
 		</nav>
+
+		<div id="main-content">
+
+			<h2><a name="what">Notre offre</a></h2>
+
+			<p>
+				Vous souhaitez:
+			</p>
+			<ul>
+				<li>compléter votre formation auto-école,</li>
+				<li>augmenter vos chances d'obtenir votre permis de conduire,</li>
+				<li>vous remettre à niveau,</li>
+				<li>éffectuer une conduite supervisée ou AAC -16 ans</li>
+			</ul>
+			<p>My Permis Facile vous propose la location de véhicules à double pédales.</p>
+
+
+			<h3>Vous êtes inscrit en auto-école</h3>
+
+			<p>
+				My Permis Facile vous permet de louer un véhicule à double commande afin de vous entraîner avec l'accompagnateur de votre choix à moindre coût.
+			</p>
+			<p>
+				Pour louer un véhicule type auto école, vous devez avoir effectuer 20 heures de conduites en auto école, et votre accompagnateur doit avoir au minimum 5 ans de permis de conduire.
+			</p>
+			<p>
+				Louer un de nos véhicules vous permettra d'acquérir plus d'expériences et d'assurances afin de maximiser vos chances de réussite lors de votre examen du permis de conduire.
+			</p>
+			<p>
+				Dès l'obtention de votre date et lieu d'examen, vous pourrez également louer un de nos véhicules à double commande afin d'y effectuer un repérage et optimiser vos chances de réussite lors de votre examen du permis de conduire.
+			</p>
+
+			<h3>Vous êtes inscrit en candidat libre</h3>
+
+			<p>
+				Aujourd'hui, pour obtenir son permis de conduire, il n'est plus nécessaire de s'inscrire au auto école.
+			</p>
+			<p>
+				En effet, il vous suffit de vous inscrire directement auprès de votre préfecture en demandant de passer cette épreuve en candidat libre. Vous recevrez une convocation gratuitement à l'épreuve pratique du permis de conduire dans un délai de 2 mois maximum.
+			</p>
+			<p>
+				Une fois votre inscription validée par votre préfecture, vous pourrez louer un de nos véhicules type auto école et vous exercer avec l'accompagnateur de votre choix à moindre coût.
+			</p>
+			<p>
+				Dès lors que vous recevrez votre convocation à l'examen pratique du permis de conduire, nous vous mettrons à disposition un véhicule à double commande le jour J.
+			</p>
+
+			<h3>Vous avez le permis et vous souhaitez une remise à niveau</h3>
+
+			<p>
+				Vous êtes déjà en possession du permis de conduire, mais vous n'avez plus conduit depuis longtemps ou peut être jamais depuis l'obtention de votre permis de conduire.
+			</p>
+			<p>
+				My Permis Facile met à votre disposition un véhicule double pédales afin de reprendre la main en toute sécurité avec l'un de vos proches et ainsi reprendre confiance et retrouver vos acquis.
+			</p>
+
+
+			<h3>Permis AAC -16 ANS ou conduite supervisée</h3>
+
+			<p>
+				Vous avez validé la durée initiale de formation avec votre auto école et vous pouvez maintenant prendre la route avec votre accompagnateur.
+			</p>
+			<p>
+				My Permis Facile vous permet de louer un véhicule à double commandes pour vous exercer avec l'accompagnateur de votre choix en toute sécurité.
+			</p>
+
+			<h2><a name="rate">Nos tarifs</a></h2>
+
+			<strong>EN COURS DE CONSTRUCTION...</strong>
+
+			<h2><a name="how">Comment s'inscrire</a></h2>
+
+			<strong>EN COURS DE CONSTRUCTION...</strong>
+
+			<h2><a name="who">Nous contacter</a></h2>
+
+			<strong>EN COURS DE CONSTRUCTION...</strong>
+
+		</div>
+		<script>
+			(function () {
+				"use strict";
+
+				const mobileMenuButton = document.querySelector("#mobile-nav .hamburger");
+				const menu = document.getElementById("menu");
+				const body = document.documentElement;
+
+				function hideMenu() {
+					menu.classList.remove("show");
+					body.removeEventListener("click", hideMenu);
+				}
+
+				mobileMenuButton.addEventListener("click", (event) => {
+					event.stopImmediatePropagation();
+					event.preventDefault();
+
+					menu.classList.toggle("show");
+					if (menu.classList.contains("show")) {
+						body.addEventListener("click", hideMenu);
+					}
+				});
+			}());
+
+		</script>
 	</body>
 </html>
